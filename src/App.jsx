@@ -32,21 +32,17 @@ export default function App() {
     </form>
   <h1 className="header">TodoList</h1>
   <ul className="list">
-    <li>
-      <label htmlFor="">
-        <input type="checkbox" />
-        Item 1
+    {todos.map(todo => {
+      return     <li>
+      <label>
+        <input type="checkbox" 
+        checked={todo.completed}/>
+        {/* Title goes here */}
+        {todo.title}
       </label>
       <button className="btn btn-danger">Delete</button>
     </li>
-
-    <li>
-      <label htmlFor="">
-        <input type="checkbox" />
-        Item 2
-      </label>
-      <button className="btn btn-danger">Delete</button>
-    </li>
+    })}
   </ul>
   </>
   )
